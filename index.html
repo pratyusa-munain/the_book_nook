@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Book Nook — a cosy little corner to discover books and keep track of your reading list.">
+  <title>The Book Nook | Find your next read</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="The Book Nook home">
+      <span class="brand-mark" aria-hidden="true">b.</span>
+      <span>The Book Nook</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a class="nav-reading" href="#collection">My reading list <span id="readingCount">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT CHAPTER STARTS HERE</p>
+        <h1>A little nook for<br><em>big stories.</em></h1>
+        <p class="hero-description">Find your next favourite, revisit an old classic, or save a book for a quieter day. There's always room for one more story.</p>
+        <a class="button button-primary" href="#collection">Explore the collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="sparkle">✳</span> Curated for curious minds and late-night readers.</div>
+      </div>
+      <div class="hero-art" aria-label="Decorative illustration of books and a cup of tea">
+        <div class="sun-disc"></div>
+        <div class="plant plant-one"><i></i><i></i><i></i><b></b></div>
+        <div class="book-stack stack-back"><span></span></div>
+        <div class="book-stack stack-middle"><span></span></div>
+        <div class="book-stack stack-front"><span></span></div>
+        <div class="tea-cup"><div class="tea"></div><div class="cup-handle"></div></div>
+        <div class="art-caption">take your time <span>♡</span></div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="Site highlights">
+      <div><span class="strip-icon">✦</span><span>Stories for every mood</span></div>
+      <div><span class="strip-icon">♡</span><span>A list that's yours to keep</span></div>
+      <div><span class="strip-icon">☼</span><span>Made for slow afternoons</span></div>
+    </section>
+
+    <section class="collection section-wrap" id="collection">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE SHELF</p>
+          <h2>Find your next <em>favourite.</em></h2>
+          <p class="section-subtitle">A small collection of stories worth making time for.</p>
+        </div>
+        <div class="collection-count"><strong id="visibleCount">8</strong><span>books to explore</span></div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search title or author..." aria-label="Search books by title or author">
+        </label>
+        <div class="filter-list" role="group" aria-label="Filter books by genre">
+          <button class="filter-chip active" data-filter="All" aria-pressed="true">All books</button>
+          <button class="filter-chip" data-filter="Fiction" aria-pressed="false">Fiction</button>
+          <button class="filter-chip" data-filter="Fantasy" aria-pressed="false">Fantasy</button>
+          <button class="filter-chip" data-filter="Mystery" aria-pressed="false">Mystery</button>
+          <button class="filter-chip" data-filter="Non-fiction" aria-pressed="false">Non-fiction</button>
+        </div>
+      </div>
+
+      <div class="book-grid" id="bookGrid">
+        <article class="book-card" data-title="The Midnight Library" data-author="Matt Haig" data-genre="Fiction">
+          <div class="book-cover cover-midnight"><span class="cover-kicker">A NOVEL</span><span class="cover-title">THE<br>MIDNIGHT<br>LIBRARY</span><span class="cover-author">MATT HAIG</span><span class="cover-moon">☾</span></div>
+          <div class="book-info"><span class="genre-tag">Fiction</span><h3>The Midnight Library</h3><p>Matt Haig</p><div class="book-bottom"><span class="book-rating">★ 4.5</span><button class="save-button" aria-label="Add The Midnight Library to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="The Hobbit" data-author="J. R. R. Tolkien" data-genre="Fantasy">
+          <div class="book-cover cover-hobbit"><span class="cover-kicker">IN A HOLE IN THE GROUND</span><span class="cover-title">THE<br>HOBBIT</span><span class="cover-author">J. R. R. TOLKIEN</span><span class="cover-mountain">⌁</span></div>
+          <div class="book-info"><span class="genre-tag">Fantasy</span><h3>The Hobbit</h3><p>J. R. R. Tolkien</p><div class="book-bottom"><span class="book-rating">★ 4.8</span><button class="save-button" aria-label="Add The Hobbit to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="And Then There Were None" data-author="Agatha Christie" data-genre="Mystery">
+          <div class="book-cover cover-mystery"><span class="cover-kicker">AGATHA CHRISTIE</span><span class="cover-title">AND THEN<br>THERE WERE<br>NONE</span><span class="cover-author">A MYSTERY</span><span class="cover-star">✦</span></div>
+          <div class="book-info"><span class="genre-tag">Mystery</span><h3>And Then There Were None</h3><p>Agatha Christie</p><div class="book-bottom"><span class="book-rating">★ 4.6</span><button class="save-button" aria-label="Add And Then There Were None to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="Atomic Habits" data-author="James Clear" data-genre="Non-fiction">
+          <div class="book-cover cover-habits"><span class="cover-kicker">TINY CHANGES</span><span class="cover-title">ATOMIC<br>HABITS</span><span class="cover-author">JAMES CLEAR</span><span class="cover-orbit">◎</span></div>
+          <div class="book-info"><span class="genre-tag">Non-fiction</span><h3>Atomic Habits</h3><p>James Clear</p><div class="book-bottom"><span class="book-rating">★ 4.7</span><button class="save-button" aria-label="Add Atomic Habits to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="Pride and Prejudice" data-author="Jane Austen" data-genre="Fiction">
+          <div class="book-cover cover-pride"><span class="cover-kicker">JANE AUSTEN</span><span class="cover-title">PRIDE &amp;<br>PREJUDICE</span><span class="cover-author">A CLASSIC NOVEL</span><span class="cover-flower">✿</span></div>
+          <div class="book-info"><span class="genre-tag">Fiction</span><h3>Pride and Prejudice</h3><p>Jane Austen</p><div class="book-bottom"><span class="book-rating">★ 4.7</span><button class="save-button" aria-label="Add Pride and Prejudice to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="The House in the Cerulean Sea" data-author="TJ Klune" data-genre="Fantasy">
+          <div class="book-cover cover-cerulean"><span class="cover-kicker">A HEARTWARMING TALE</span><span class="cover-title">THE HOUSE<br>IN THE<br>CERULEAN SEA</span><span class="cover-author">TJ KLUNE</span><span class="cover-wave">〰</span></div>
+          <div class="book-info"><span class="genre-tag">Fantasy</span><h3>The House in the Cerulean Sea</h3><p>TJ Klune</p><div class="book-bottom"><span class="book-rating">★ 4.4</span><button class="save-button" aria-label="Add The House in the Cerulean Sea to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="The Silent Patient" data-author="Alex Michaelides" data-genre="Mystery">
+          <div class="book-cover cover-silent"><span class="cover-kicker">A PSYCHOLOGICAL THRILLER</span><span class="cover-title">THE<br>SILENT<br>PATIENT</span><span class="cover-author">ALEX MICHAELIDES</span><span class="cover-eye">◉</span></div>
+          <div class="book-info"><span class="genre-tag">Mystery</span><h3>The Silent Patient</h3><p>Alex Michaelides</p><div class="book-bottom"><span class="book-rating">★ 4.3</span><button class="save-button" aria-label="Add The Silent Patient to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+        <article class="book-card" data-title="Educated" data-author="Tara Westover" data-genre="Non-fiction">
+          <div class="book-cover cover-educated"><span class="cover-kicker">A MEMOIR</span><span class="cover-title">EDUCATED</span><span class="cover-author">TARA WESTOVER</span><span class="cover-sun">☼</span></div>
+          <div class="book-info"><span class="genre-tag">Non-fiction</span><h3>Educated</h3><p>Tara Westover</p><div class="book-bottom"><span class="book-rating">★ 4.5</span><button class="save-button" aria-label="Add Educated to reading list" aria-pressed="false">＋ Save</button></div></div>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No books found. Try another title or genre. ♡</p>
+      <div class="reading-panel" id="readingPanel">
+        <div><span class="panel-icon">♡</span><div><h3>Your reading list</h3><p id="readingSummary">Save books you want to read later.</p></div></div>
+        <button class="text-button" id="showSavedButton">Show saved books <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-inner">
+        <div class="about-symbol">b<span>.</span></div>
+        <div><p class="eyebrow">A NOTE FROM THE NOOK</p><h2>There's a story for <em>every season.</em></h2><p>The Book Nook is a small, student-made corner of the internet for people who love getting lost in a good book. Browse the shelf, find a new favourite, and keep a list for later.</p></div>
+        <a class="button button-light" href="#collection">Back to the shelf ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">b.</span><span>The Book Nook</span></a>
+    <p>Made with care &amp; a little bookish magic.</p>
+    <span>© <span id="year"></span> The Book Nook</span>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
